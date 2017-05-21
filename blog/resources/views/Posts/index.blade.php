@@ -8,7 +8,7 @@
 </head>
 <body>
     
-<h1>index post</h1>
+<h1>index post  </h1>
 
 </body>
 </html>

@@ -40,7 +40,7 @@ Route::get('about-page', function () {
     return view('other.about');
 })->name('other.about');
 
-Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+Route::get('/post/{id}',"Posts\PostsController@index" )->name('Posts.PostsController');
 
 
 Route::get('/cache', function () {
