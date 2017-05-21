@@ -13,22 +13,22 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-Route::get('/', function () {
-    return View::make('welcome');
-});
+// Route::get('/', function () {
+//     return View::make('welcome');
+// });
 
 
-Route::group(['prefix' => 'admins'],function(){
+// Route::group(['prefix' => 'admins'],function(){
 
-Route::get('',function(){
-    return view('admin.index');
-})->name('admin.index');
+// Route::get('',function(){
+//     return view('admin.index');
+// })->name('admin.index');
 
-Route::get('create',function(){
-    return view('admin.create');
-})->name('admin.create');
+// Route::get('create',function(){
+//     return view('admin.create');
+// })->name('admin.create');
 
-});
+// });
 
 // Route::get('/admin/posts/example',
 //  array('as' => 'admin.home', function () {
@@ -36,16 +36,19 @@ Route::get('create',function(){
 //     return "this url is " . $url;
 // }));
 
-Route::get('about-page', function () {
-    return view('other.about');
-})->name('other.about');
+// Route::get('about-page', function () {
+//     return view('other.about');
+// })->name('other.about');
 
-Route::get('/post/{id}',"Posts\PostsController@index" )->name('Posts.PostsController');
+// Route::get('/post/{id}',"Posts\PostsController@index" )->name('Posts.PostsController');
 
 
-Route::get('/cache', function () {
-    return Cache::get('key');
-});
+Route::resource('post', 'Posts\PostsController');
+
+// Route::get('/cache', function () {
+//     return Cache::get('key');
+// });
+
 
 // Route::get('post/{id}/{name}', function ($id,$name) {
 //     return "este es el numero de post  " . $id . $name;
