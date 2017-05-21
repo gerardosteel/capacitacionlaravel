@@ -12,12 +12,16 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-       return "valor de post: " . $id;
-        // return view('Posts.index');
+    //    return "valor de post: " . $id;
+    $prueba1=5;
+         return view('Posts.index')->with('post',$prueba1);
     }
-
+    public function show_post($num1)
+    {
+      return "el valor es: " . $num1; 
+    }
     /**
      * Show the form for creating a new resource.
      *

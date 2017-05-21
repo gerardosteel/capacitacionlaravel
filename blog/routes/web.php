@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-// Route::get('/', function () {
-//     return View::make('welcome');
-// });
+Route::get('/', function () {
+    return View::make('welcome');
+});
 
 
 // Route::group(['prefix' => 'admins'],function(){
@@ -40,10 +40,12 @@ use Illuminate\Support\Facades\Cache;
 //     return view('other.about');
 // })->name('other.about');
 
-// Route::get('/post/{id}',"Posts\PostsController@index" )->name('Posts.PostsController');
+Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
 
+Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+Route::get('/post/{num1}',"Posts\PostsController@show_post" )->name('Posts.PostsController');
 
-Route::resource('post', 'Posts\PostsController');
+// Route::resource('post', 'Posts\PostsController');
 
 // Route::get('/cache', function () {
 //     return Cache::get('key');
