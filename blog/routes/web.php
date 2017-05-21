@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,16 +14,35 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return View::make('welcome');
 });
 
-Route::get('/admin/posts/example',
- array('as' => 'admin.home', function () {
-    $url = route('admin.home');
-    return "this url is " . $url;
-}));
 
+Route::group(['prefix' => 'admins'],function(){
 
+Route::get('',function(){
+    return view('admin.index');
+})->name('admin.index');
+
+Route::get('create',function(){
+    return view('admin.create');
+})->name('admin.create');
+
+});
+
+// Route::get('/admin/posts/example',
+//  array('as' => 'admin.home', function () {
+//     $url = route('admin.home');
+//     return "this url is " . $url;
+// }));
+
+Route::get('about-page', function () {
+    return view('other.about');
+})->name('other.about');
+
+Route::get('/cache', function () {
+    return Cache::get('key');
+});
 
 // Route::get('post/{id}/{name}', function ($id,$name) {
 //     return "este es el numero de post  " . $id . $name;

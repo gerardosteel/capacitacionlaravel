@@ -66,7 +66,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-                 <a href="{{ url('/about') }}">about</a>
+                 <a href="{{ url('/about-page') }}">about</a>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
