@@ -36,14 +36,18 @@ Route::get('/', function () {
 //     return "this url is " . $url;
 // }));
 
-// Route::get('about-page', function () {
-//     return view('other.about');
-// })->name('other.about');
+Route::get('about-page', function () {
+    return view('other.about');
+})->name('other.about');
 
-Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+Route::get('/Home', function () {
+    return View::make('Home.home');
+});
 
-Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
-Route::get('/post/{num1}',"Posts\PostsController@show_post" )->name('Posts.PostsController');
+// Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+
+// Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+// Route::get('/post/{num1}',"Posts\PostsController@show_post" )->name('Posts.PostsController');
 
 // Route::resource('post', 'Posts\PostsController');
 

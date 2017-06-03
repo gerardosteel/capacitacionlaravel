@@ -70,28 +70,26 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home </a>
+                        <a href="{{ url('/home-page') }}">Home </a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
                 </div>
             @endif
-<?php
-$var ="<script>alert('hola');</script>";
-?>
-@if( Route::has('1') ) 
-<h3>hay 1</h3>
-@else
-<h3>no hay 1</h3>
-@endif
-            <div class="content">
+
+                <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel                    
+                </div>
+           
+                <div>
+
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs" >Documentation {{ $var }} </a>
+                    <a href="{{ url('/Home') }}">Home </a>
+                    <a href="https://laravel.com/docs" >Documentation </a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
