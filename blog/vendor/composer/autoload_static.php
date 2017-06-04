@@ -299,6 +299,8 @@ class ComposerStaticInit87e7eb2f43298f794df6cd22b07c97aa
     );
 
     public static $classMap = array (
+        'AddForeingKeyIdToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_193935_add_foreing_key_id_to_posts_table.php',
+        'AddIsAdminToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_184031_add_is_admin_to_users_table.php',
         'AddIsPhoneCulumnToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_160848_add_is_phone_culumn_to_users_table.php',
         'AddSaltAndProfileColumn' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_173722_add_salt_and_profile_column.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -326,6 +328,8 @@ class ComposerStaticInit87e7eb2f43298f794df6cd22b07c97aa
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'ChangeAttrIsAdminToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_184419_change_attr_is_admin_to_users_table.php',
+        'ChangeFieldPositionToLookupsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_181912_change_field_position_to_lookups_table.php',
         'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_164538_create_comments_table.php',
         'CreateLookupsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_164653_create_lookups_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
@@ -363,6 +367,7 @@ class ComposerStaticInit87e7eb2f43298f794df6cd22b07c97aa
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedList' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'DelFieldsToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_190259_del_fields_to_users_table.php',
         'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
         'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
         'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
@@ -2940,6 +2945,7 @@ class ComposerStaticInit87e7eb2f43298f794df6cd22b07c97aa
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RenameColumnIsAdminToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_185834_rename_column_is_admin_to_users_table.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

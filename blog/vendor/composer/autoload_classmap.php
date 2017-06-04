@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddForeingKeyIdToPostsTable' => $baseDir . '/database/migrations/2017_06_04_193935_add_foreing_key_id_to_posts_table.php',
+    'AddIsAdminToUsersTable' => $baseDir . '/database/migrations/2017_06_04_184031_add_is_admin_to_users_table.php',
     'AddIsPhoneCulumnToUsersTable' => $baseDir . '/database/migrations/2017_06_04_160848_add_is_phone_culumn_to_users_table.php',
     'AddSaltAndProfileColumn' => $baseDir . '/database/migrations/2017_06_04_173722_add_salt_and_profile_column.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -33,6 +35,7 @@ return array(
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+    'ChangeAttrIsAdminToUsersTable' => $baseDir . '/database/migrations/2017_06_04_184419_change_attr_is_admin_to_users_table.php',
     'ChangeFieldPositionToLookupsTable' => $baseDir . '/database/migrations/2017_06_04_181912_change_field_position_to_lookups_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2017_06_04_164538_create_comments_table.php',
     'CreateLookupsTable' => $baseDir . '/database/migrations/2017_06_04_164653_create_lookups_table.php',
@@ -71,6 +74,7 @@ return array(
     'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedList' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
     'DeepCopy\\TypeFilter\\TypeFilter' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
     'DeepCopy\\TypeMatcher\\TypeMatcher' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+    'DelFieldsToUsersTable' => $baseDir . '/database/migrations/2017_06_04_190259_del_fields_to_users_table.php',
     'Doctrine\\Common\\Annotations\\Annotation' => $vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
     'Doctrine\\Common\\Annotations\\AnnotationException' => $vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
     'Doctrine\\Common\\Annotations\\AnnotationReader' => $vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
@@ -2648,6 +2652,7 @@ return array(
     'Ramsey\\Uuid\\UuidFactory' => $vendorDir . '/ramsey/uuid/src/UuidFactory.php',
     'Ramsey\\Uuid\\UuidFactoryInterface' => $vendorDir . '/ramsey/uuid/src/UuidFactoryInterface.php',
     'Ramsey\\Uuid\\UuidInterface' => $vendorDir . '/ramsey/uuid/src/UuidInterface.php',
+    'RenameColumnIsAdminToUsersTable' => $baseDir . '/database/migrations/2017_06_04_185834_rename_column_is_admin_to_users_table.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',

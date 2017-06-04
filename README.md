@@ -4,6 +4,8 @@
 
 #crear rutas o enmascarar las rutas en routes/web.php
 
+#configuracion para conectar a una base de datos en el archivo .env
+
 #en la carptea Layouts va el molde de nuestra pagina
 
 #con el @export y el @yield se renderizan las vistas
