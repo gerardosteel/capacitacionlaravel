@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDeletedAtColumnToTableTags' => $baseDir . '/database/migrations/2017_06_10_184515_add_deleted_at_column_to_table_tags.php',
     'AddForeingKeyIdToPostsTable' => $baseDir . '/database/migrations/2017_06_04_193935_add_foreing_key_id_to_posts_table.php',
     'AddIsAdminToUsersTable' => $baseDir . '/database/migrations/2017_06_04_184031_add_is_admin_to_users_table.php',
     'AddIsPhoneCulumnToUsersTable' => $baseDir . '/database/migrations/2017_06_04_160848_add_is_phone_culumn_to_users_table.php',

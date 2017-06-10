@@ -299,6 +299,7 @@ class ComposerStaticInit87e7eb2f43298f794df6cd22b07c97aa
     );
 
     public static $classMap = array (
+        'AddDeletedAtColumnToTableTags' => __DIR__ . '/../..' . '/database/migrations/2017_06_10_184515_add_deleted_at_column_to_table_tags.php',
         'AddForeingKeyIdToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_193935_add_foreing_key_id_to_posts_table.php',
         'AddIsAdminToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_184031_add_is_admin_to_users_table.php',
         'AddIsPhoneCulumnToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_160848_add_is_phone_culumn_to_users_table.php',

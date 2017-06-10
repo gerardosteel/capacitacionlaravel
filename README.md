@@ -13,3 +13,6 @@
 #crear una nueva migracion cuando se modifique la base datos, para agregar o cambiar atributos
 #php artisan make:migration change_field_nombrecampo_to_nombretabla --table=nombretabla
 
+#para usar el softdelete es agregar la fachada el "use" y aplicarlo con un delete de eloquent, si lo usamos
+#con un destroy se eliminara el registro a nivel real y no logico
+

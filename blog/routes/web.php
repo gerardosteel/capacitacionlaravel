@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Cache;
-
+use App\Tag;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +45,7 @@ Route::get('/Home', function () {
 });
 
 Route::get('/read', function() {
-    $r = DB::select('select * from tags where id =  ? ', [6]);
+    $r = DB::select('select * from tags where id =  ? ', [4]);
     foreach ($r as $d) {
     $arr = array( 'name' => $d->name );
     }
@@ -63,11 +63,99 @@ Route::get('/update', function() {
     return $r;
 });
 
+Route::get('/update2', function() {
+    $r = DB::update('update tags set name = ? , frequency = ? where id = ?', ["holi3","holi3",6]);
+    return $r;
+});
 
 Route::get('/insert', function() {
     DB::insert('insert into tags (name, frequency,created_at,updated_at) values (?, ?,?,?)', ['titulo de prueba', 'prueba de contenido', date("Y-m-d h:i:s") , date("Y-m-d h:i:s") ]);
     return "b";
 });
+
+//--------------------Eloquent---------------------
+
+Route::get('/readeloquent', function() {
+    $tags = Tag::all();
+    // foreach ($tags as $tag) {
+    
+    // }
+    return $tags;
+});
+
+
+Route::get('/find', function() {
+    $tags = Tag::find(6);
+    return $tags->name;
+});
+
+
+Route::get('/findwhere', function() {
+    $tags = Tag::where('id','>',0)->orderBy('id','desc')->take(2)->get();
+    return $tags;
+});
+
+Route::get('/basicinsert', function() {
+    $tags = new Tag;
+    $tags->name = "holi3.5";
+    $tags->frequency = "holi3.5";
+    $tags->save();
+});
+
+Route::get('/basicinsert2', function() {
+    $tags = Tag::find(6);
+    $tags->name = "holi3.5";
+    $tags->save();
+});
+
+Route::get('/createmass', function() {
+    //cuandoo queremo inserta alfo como un array asociativo
+    //nos sale el error MassAssignamentException
+    // para repararlo hay que modificar el comportamiento del modelo con la propiedad fillable
+   Tag::create(['name'=>'texto fillable','frequency'=>'texto f fillable']);
+});
+
+
+Route::get('/updateeloquent', function() {
+    Tag::where('id','5')->update(['name' => 'iaslkdhasdhjkas','frequency'=>'ahsdhasdhashdhgs']);
+});
+
+
+Route::get('/deleteeloquent', function() {
+    $tags = Tag::find(4);
+    // elimina el registro a nivel logico
+    $tags->delete();
+});
+
+Route::get('/deleteeloquentwithdestroy', function() {
+    // elimina el registro a nivel real con softdeleted
+    Tag::destroy(2);
+    Tag::destroy([3,6]);
+    Tag::where('id',4)->delete();
+});
+
+Route::get('/readsoftdelete', function() {
+    $tags = Tag::onlyTrashed()->get(); 
+    return $tags;
+});
+
+Route::get('/restoresoftdelete', function() {
+    $tags = Tag::withTrashed()->restore(); 
+    return ($tags ?  "correcto" : "error" );
+});
+
+Route::get('/forcedelete', function() {
+    $tags = Tag::onlyTrashed()->where('id',4)->forceDelete(); 
+    return ($tags ?  "correcto" : "error" );
+});
+
+
+
+
+
+// Route::get('/sotfdelete', function() {
+    
+// });
 
 // Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
 
