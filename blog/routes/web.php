@@ -44,6 +44,31 @@ Route::get('/Home', function () {
     return View::make('Home.home');
 });
 
+Route::get('/read', function() {
+    $r = DB::select('select * from tags where id =  ? ', [6]);
+    foreach ($r as $d) {
+    $arr = array( 'name' => $d->name );
+    }
+    return $arr['name'];
+});
+
+Route::get('/delete', function() {
+    $r = DB::delete('delete from tags where id = ?', [1]);
+    return ($r ? "borrado correctamente" : "ocurrio un error");
+});
+
+
+Route::get('/update', function() {
+    $r = DB::update('update tags set name = "holi", frequency = "holi2" where id = ?', ['6']);
+    return $r;
+});
+
+
+Route::get('/insert', function() {
+    DB::insert('insert into tags (name, frequency,created_at,updated_at) values (?, ?,?,?)', ['titulo de prueba', 'prueba de contenido', date("Y-m-d h:i:s") , date("Y-m-d h:i:s") ]);
+    return "b";
+});
+
 // Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
 
 // Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');

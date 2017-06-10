@@ -20,7 +20,7 @@ class AddForeingKeyIdToPostsTable extends Migration
         });
         Schema::table('users', function (Blueprint $table) {
             //
-              $table->dropColumn(['campo1','campo2','campo3']);
+            //   $table->dropColumn(['campo1','campo2','campo3']);
              //$table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -33,7 +33,7 @@ class AddForeingKeyIdToPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-          $table->dropForeign('posts_user_id_foreign');
+        //   $table->dropForeign('posts_user_id_foreign');
         });
     }
 }

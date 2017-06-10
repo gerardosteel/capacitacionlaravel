@@ -11,5 +11,5 @@
 #con el @export y el @yield se renderizan las vistas
 
 #crear una nueva migracion cuando se modifique la base datos, para agregar o cambiar atributos
-#php artisan make:migration change_field_nombrecampo_to_nombretabla --tale=nombretabla
+#php artisan make:migration change_field_nombrecampo_to_nombretabla --table=nombretabla
 
