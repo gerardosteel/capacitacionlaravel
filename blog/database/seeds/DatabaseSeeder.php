@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        // poner el nombre de la tabla en singular la cual se ejecutara con el comando de artisan
+        $this->call(TagTableSeeder::class);
     }
 }

@@ -15,4 +15,10 @@ class Tag extends Model
        'name',
        'frequency'
     ];
+    
+    // base: name ,  title_autor
+    // funcion: Name , TitleAutor
+    public function setNameAttribute($value){
+        $this->attributes['name'] = strtolower($value);    
+    }
 }

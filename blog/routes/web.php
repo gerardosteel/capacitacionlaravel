@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Cache;
 use App\Tag;
+use App\User;
+use App\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +37,25 @@ Route::get('/', function () {
 //     $url = route('admin.home');
 //     return "this url is " . $url;
 // }));
+// Route::get('/sotfdelete', function() {
+    
+// });
 
+// Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+
+// Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
+// Route::get('/post/{num1}',"Posts\PostsController@show_post" )->name('Posts.PostsController');
+
+// Route::resource('post', 'Posts\PostsController');
+
+// Route::get('/cache', function () {
+//     return Cache::get('key');
+// });
+
+
+// Route::get('post/{id}/{name}', function ($id,$name) {
+//     return "este es el numero de post  " . $id . $name;
+// });
 Route::get('about-page', function () {
     return view('other.about');
 })->name('other.about');
@@ -97,8 +117,8 @@ Route::get('/findwhere', function() {
 
 Route::get('/basicinsert', function() {
     $tags = new Tag;
-    $tags->name = "holi3.5";
-    $tags->frequency = "holi3.5";
+    $tags->name = "AAAAAAAAAAAA";
+    $tags->frequency = "BBBBBBBBBBBBB";
     $tags->save();
 });
 
@@ -150,25 +170,23 @@ Route::get('/forcedelete', function() {
 });
 
 
+// -----------------------Eloquent(Relaciones)---------------------
+
+// relacion uno a uno
+Route::get('/user/post/{id}', function($id) {
+    return User::find($id)->post;
+});
+
+// relacion uno a uno inversa
+Route::get('/post/{id}/user', function($id) {
+    return Post::find($id)->user;
+});
 
 
-
-// Route::get('/sotfdelete', function() {
-    
-// });
-
-// Route::get('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
-
-// Route::post('/post',"Posts\PostsController@index" )->name('Posts.PostsController');
-// Route::get('/post/{num1}',"Posts\PostsController@show_post" )->name('Posts.PostsController');
-
-// Route::resource('post', 'Posts\PostsController');
-
-// Route::get('/cache', function () {
-//     return Cache::get('key');
-// });
-
-
-// Route::get('post/{id}/{name}', function ($id,$name) {
-//     return "este es el numero de post  " . $id . $name;
-// });
+Route::get('/postomany', function() {
+    $user = User::find(1);
+    foreach ($user->posts as $post) {
+    echo $post->title . "<br>";
+    //echo "{$post->title}<br>";
+    }
+});
