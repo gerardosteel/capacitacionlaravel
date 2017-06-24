@@ -201,3 +201,10 @@ Route::get('/users/{id}/role', function ($id) {
     return $user;    
 });
 
+//Accediendo a la tabla pivote
+Route::get('/users/pivotes', function () {
+   $user = User::find(1);
+   foreach ($user->roles as $role) {
+       echo $role->pivot->id."<br>";
+   } 
+}); 
