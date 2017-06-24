@@ -1,4 +1,4 @@
-# capacitacionlaravel
+ # capacitacionlaravel
 
 #con el comando php artisan -serve se crea un servidor local
 

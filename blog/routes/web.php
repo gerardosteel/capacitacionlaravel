@@ -182,7 +182,7 @@ Route::get('/post/{id}/user', function($id) {
     return Post::find($id)->user;
 });
 
-
+// relacion uno a muchos
 Route::get('/postomany', function() {
     $user = User::find(1);
     foreach ($user->posts as $post) {
@@ -190,3 +190,14 @@ Route::get('/postomany', function() {
     //echo "{$post->title}<br>";
     }
 });
+
+//relacion muchos a muchos
+Route::get('/users/{id}/role', function ($id) {
+    // $user = User::find($id);
+    // foreach ($user->roles as $role) {
+    //     return $role->name;
+    // }
+    $user = User::find($id)->roles()->orderBy('id','desc')->get();
+    return $user;    
+});
+
